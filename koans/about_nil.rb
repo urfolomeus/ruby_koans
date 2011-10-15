@@ -33,6 +33,14 @@ class AboutNil < EdgeCase::Koan
     # or
     #    obj == nil
     # Why?
+    #
+    # IMHO it is better to use obj.nil? as each object is able to override ==,
+    # which could lead to unexpected results. obj.nil? could still be overridden
+    # (although convention dictates that it should not be), but is less likely to
+    # cause confusing results as its name clearly states what its behaviour should be.
+    #
+    # Also, nil? wins from a responsibility pov (i.e. the nil? method's raison d'être is
+    # to indicate an object's nil status).
   end
 
 end
